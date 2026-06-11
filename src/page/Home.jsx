@@ -64,11 +64,17 @@ export default function Home() {
               }}
             >
               <h1 className="">Resto</h1>
-              Rumah makanan dengan nuansa Fantasi            </Col>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              expedita sequi a iste sed vero aliquam maiores saepe cum impedit
+              ducimus ratione exercitationem, quas cumque aperiam ea aut nam
+              culpa!{" "}
+            </Col>
           </Row>
         </Container>
       </div>
-      <h1 className="text-center mt-5" style={{fontSize: "35px"}}>Daftar makanan yang ada di menu</h1>
+      <h1 className="text-center mt-5" style={{ fontSize: "35px" }}>
+        Daftar makanan yang ada di menu
+      </h1>
       <div className="mt-3">
         <Stack>
           <Row>
@@ -93,6 +99,16 @@ export default function Home() {
                     e.target.style.transform = "scale(1)";
                   }}
                 />
+                <p
+                  className="fw-bold text-center mt-4"
+                  style={{
+                    fontSize: "18px",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  Satay
+                </p>
               </Link>
               <Link>
                 <img
@@ -111,6 +127,16 @@ export default function Home() {
                     e.target.style.transform = "scale(1)";
                   }}
                 />
+                <p
+                  className="fw-bold text-center mt-4"
+                  style={{
+                    fontSize: "18px",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  Satay
+                </p>
               </Link>
               <Link>
                 <img
@@ -129,6 +155,16 @@ export default function Home() {
                     e.target.style.transform = "scale(1)";
                   }}
                 />
+                <p
+                  className="fw-bold text-center mt-4"
+                  style={{
+                    fontSize: "18px",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  Satay
+                </p>
               </Link>
               <Link>
                 <img
@@ -147,6 +183,16 @@ export default function Home() {
                     e.target.style.transform = "scale(1)";
                   }}
                 />
+                <p
+                  className="fw-bold text-center mt-4"
+                  style={{
+                    fontSize: "18px",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  Satay
+                </p>
               </Link>
             </Col>
           </Row>

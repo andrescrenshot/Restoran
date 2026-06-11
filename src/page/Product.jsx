@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Ayam from "../assets/Ayam.png";
@@ -8,9 +8,23 @@ import satay from "../assets/satay.png";
 import Citarasa from "../assets/Citarasa.png";
 import Kimbab from "../assets/Kimbab.png";
 import Rendang from "../assets/Rendang.png";
-import { renderMatches } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Product() {
+  const HandleBeli = () => {
+    Swal.fire({
+      title: "Berhasil!",
+      text: "Pesanan berhasil ditambahkan",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+  };
+
+  const [jumlah, setJumlah] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  
+
   return (
     <div id="link">
       <Row className="justify-content-center mt-4">
@@ -20,7 +34,7 @@ export default function Product() {
             id="searchInput"
             className="form-control"
             style={{
-              height: "50px",
+              height: "45px",
               fontSize: "20px",
               width: "1100",
             }}
@@ -60,13 +74,15 @@ export default function Product() {
                     <button
                       className="btn btn-sm p-0 border-0 text-muted fw-bold"
                       style={{ width: "20px" }}
+                      onClick={() => jumlah > 1 && setJumlah(jumlah - 1)}
                     >
                       −
                     </button>
-                    <span className="mx-3 fw-semibold small">1</span>
+                    <span className="mx-3 fw-semibold small">{jumlah}</span>
                     <button
                       className="btn btn-sm p-0 border-0 text-success fw-bold hover:bg-blue-500"
                       style={{ width: "20px" }}
+                      onClick={() => setJumlah(jumlah + 1)}
                     >
                       +
                     </button>
@@ -74,6 +90,7 @@ export default function Product() {
                   <div className="fw-bold text-secondary fs-6">Rp 5.000</div>
                 </div>
                 <button
+                  onClick={HandleBeli}
                   className="w-100 py-2 fw-semibold text-white border-0 btn btn-danger"
                   style={{
                     borderRadius: "10px",
@@ -112,13 +129,15 @@ export default function Product() {
                     <button
                       className="btn btn-sm p-0 border-0 text-muted fw-bold"
                       style={{ width: "20px" }}
+                      onClick={() => jumlah > 1 && setJumlah(jumlah - 1)}
                     >
                       −
                     </button>
-                    <span className="mx-3 fw-semibold small">1</span>
+                    <span className="mx-3 fw-semibold small">{jumlah}</span>
                     <button
                       className="btn btn-sm p-0 border-0 text-success fw-bold hover:bg-blue-500"
                       style={{ width: "20px" }}
+                      onClick={() => setJumlah(jumlah + 1)}
                     >
                       +
                     </button>
@@ -126,6 +145,7 @@ export default function Product() {
                   <div className="fw-bold text-secondary fs-6">Rp 5.000</div>
                 </div>
                 <button
+                  onClick={HandleBeli}
                   className="w-100 py-2 fw-semibold text-white border-0 btn btn-danger"
                   style={{
                     borderRadius: "10px",
@@ -164,13 +184,15 @@ export default function Product() {
                     <button
                       className="btn btn-sm p-0 border-0 text-muted fw-bold"
                       style={{ width: "20px" }}
+                      onClick={() => jumlah > 1 && setJumlah(jumlah - 1)}
                     >
                       −
                     </button>
-                    <span className="mx-3 fw-semibold small">1</span>
+                    <span className="mx-3 fw-semibold small">{jumlah}</span>
                     <button
                       className="btn btn-sm p-0 border-0 text-success fw-bold hover:bg-blue-500"
                       style={{ width: "20px" }}
+                      onClick={() => setJumlah(jumlah + 1)}
                     >
                       +
                     </button>
@@ -178,6 +200,7 @@ export default function Product() {
                   <div className="fw-bold text-secondary fs-6">Rp 5.000</div>
                 </div>
                 <button
+                  onClick={HandleBeli}
                   className="w-100 py-2 fw-semibold text-white border-0 btn btn-danger"
                   style={{
                     borderRadius: "10px",
@@ -216,13 +239,15 @@ export default function Product() {
                     <button
                       className="btn btn-sm p-0 border-0 text-muted fw-bold"
                       style={{ width: "20px" }}
+                      onClick={() => jumlah > 1 && setJumlah(jumlah - 1)}
                     >
                       −
                     </button>
-                    <span className="mx-3 fw-semibold small">1</span>
+                    <span className="mx-3 fw-semibold small">{jumlah}</span>
                     <button
                       className="btn btn-sm p-0 border-0 text-success fw-bold hover:bg-blue-500"
                       style={{ width: "20px" }}
+                      onClick={() => setJumlah(jumlah + 1)}
                     >
                       +
                     </button>
@@ -230,6 +255,7 @@ export default function Product() {
                   <div className="fw-bold text-secondary fs-6">Rp 5.000</div>
                 </div>
                 <button
+                  onClick={HandleBeli}
                   className="w-100 py-2 fw-semibold text-white border-0 btn btn-danger"
                   style={{
                     borderRadius: "10px",
@@ -268,13 +294,15 @@ export default function Product() {
                     <button
                       className="btn btn-sm p-0 border-0 text-muted fw-bold"
                       style={{ width: "20px" }}
+                      onClick={() => jumlah > 1 && setJumlah(jumlah - 1)}
                     >
                       −
                     </button>
-                    <span className="mx-3 fw-semibold small">1</span>
+                    <span className="mx-3 fw-semibold small">{jumlah}</span>
                     <button
                       className="btn btn-sm p-0 border-0 text-success fw-bold hover:bg-blue-500"
                       style={{ width: "20px" }}
+                      onClick={() => setJumlah(jumlah + 1)}
                     >
                       +
                     </button>
@@ -282,6 +310,7 @@ export default function Product() {
                   <div className="fw-bold text-secondary fs-6">Rp 5.000</div>
                 </div>
                 <button
+                  onClick={HandleBeli}
                   className="w-100 py-2 fw-semibold text-white border-0 btn btn-danger"
                   style={{
                     borderRadius: "10px",
@@ -320,13 +349,15 @@ export default function Product() {
                     <button
                       className="btn btn-sm p-0 border-0 text-muted fw-bold"
                       style={{ width: "20px" }}
+                      onClick={() => jumlah > 1 && setJumlah(jumlah - 1)}
                     >
                       −
                     </button>
-                    <span className="mx-3 fw-semibold small">1</span>
+                    <span className="mx-3 fw-semibold small">{jumlah}</span>
                     <button
                       className="btn btn-sm p-0 border-0 text-success fw-bold hover:bg-blue-500"
                       style={{ width: "20px" }}
+                      onClick={() => setJumlah(jumlah + 1)}
                     >
                       +
                     </button>
@@ -334,6 +365,7 @@ export default function Product() {
                   <div className="fw-bold text-secondary fs-6">Rp 5.000</div>
                 </div>
                 <button
+                  onClick={HandleBeli}
                   className="w-100 py-2 fw-semibold text-white border-0 btn btn-danger"
                   style={{
                     borderRadius: "10px",
@@ -346,6 +378,31 @@ export default function Product() {
           </Col>
         </Row>
       </Container>
+      <nav className="d-flex justify-content-center mt-4 btn-danger">
+        <ul className="pagination ">
+          <li className={`page-item ${currentPage === 1 ? "active" : " "}`}>
+            <button
+              className={`page-link ${
+                currentPage === 1 ? "bg-danger text-white border-danger" : ""
+              }`}
+              onClick={() => setCurrentPage(1)}
+            >
+              1
+            </button>
+          </li>
+
+          <li className={`page-item ${currentPage === 2 ? "active" : ""}`}>
+            <button
+              className={`page-link ${
+                currentPage === 2 ? "bg-danger text-white border-danger" : ""
+              }`}
+              onClick={() => setCurrentPage(2)}
+            >
+              2
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
