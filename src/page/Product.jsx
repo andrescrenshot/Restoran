@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import "remixicon/fonts/remixicon.css";
 import Card from "react-bootstrap/Card";
 import Ayam from "../assets/Ayam.png";
 import Container from "react-bootstrap/Container";
@@ -9,6 +10,7 @@ import Citarasa from "../assets/Citarasa.png";
 import Kimbab from "../assets/Kimbab.png";
 import Rendang from "../assets/Rendang.png";
 import Swal from "sweetalert2";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 export default function Product() {
   const HandleBeli = () => {
@@ -22,12 +24,17 @@ export default function Product() {
 
   const [jumlah, setJumlah] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const [kategori, setKategori] = useState(" Kategori");
 
-  
-
+  const kategoriConfig = {
+    " Kategori": { icon: "ri-apps-2-line", color: "#888", bg: "#f1f5f9" },
+    Makanan: { icon: "ri-restaurant-2-line", color: "#BA7517", bg: "#FAEEDA" },
+    Minuman: { icon: "ri-goblet-line", color: "#185FA5", bg: "#E6F1FB" },
+    Dessert: { icon: "ri-cake-3-line", color: "#993556", bg: "#FBEAF0" },
+  };
   return (
     <div id="link">
-      <Row className="justify-content-center mt-4">
+      <Row className="justify-content-center align-items-center mt-4">
         <Col md={8}>
           <input
             type="text"
@@ -36,10 +43,109 @@ export default function Product() {
             style={{
               height: "45px",
               fontSize: "20px",
-              width: "1100",
             }}
             placeholder="🔍 Cari nama makanan..."
           />
+        </Col>
+        <Col md="auto">
+          <NavDropdown
+            title={
+              <span className="d-flex align-items-center gap-2">
+                <span
+                  style={{
+                    width: 30,
+                    height: 30,
+                    borderRadius: 7,
+                    background: kategoriConfig[kategori]?.bg,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <i
+                    className={kategoriConfig[kategori]?.icon}
+                    style={{
+                      color: kategoriConfig[kategori]?.color,
+                      fontSize: 17,
+                    }}
+                  ></i>
+                </span>
+                <span style={{ fontSize: 15 }}>{kategori}</span>
+              </span>
+            }
+            id="basic-nav-dropdown"
+            className="fw-semibold"
+            style={{
+              border: "1.5px solid #e2e8f0",
+              borderRadius: 10,
+              background: "#fff",
+              boxShadow: "0 1px 4px rgba(0,0,0,0.07)",
+              padding: "4px 10px",
+            }}
+          >
+            <NavDropdown.Item
+              onClick={() => setKategori("Makanan")}
+              className="rounded d-flex align-items-center gap-2 py-2"
+            >
+              <span
+                style={{
+                  width: 28,
+                  height: 28,
+                  borderRadius: 6,
+                  background: "#FAEEDA",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <i
+                  className="ri-restaurant-2-line"
+                  style={{ color: "#BA7517" }}
+                ></i>
+              </span>
+              Makanan
+            </NavDropdown.Item>
+
+            <NavDropdown.Item
+              onClick={() => setKategori("Minuman")}
+              className="rounded d-flex align-items-center gap-2 py-2"
+            >
+              <span
+                style={{
+                  width: 28,
+                  height: 28,
+                  borderRadius: 6,
+                  background: "#E6F1FB",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <i className="ri-goblet-line" style={{ color: "#185FA5" }}></i>
+              </span>
+              Minuman
+            </NavDropdown.Item>
+
+            <NavDropdown.Item
+              onClick={() => setKategori("Dessert")}
+              className="rounded d-flex align-items-center gap-2 py-2"
+            >
+              <span
+                style={{
+                  width: 28,
+                  height: 28,
+                  borderRadius: 6,
+                  background: "#FBEAF0",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <i className="ri-cake-3-line" style={{ color: "#993556" }}></i>
+              </span>
+              Dessert
+            </NavDropdown.Item>
+          </NavDropdown>
         </Col>
       </Row>
 
